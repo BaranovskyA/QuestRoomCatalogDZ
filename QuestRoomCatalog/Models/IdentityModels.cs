@@ -29,5 +29,7 @@ namespace QuestRoomCatalog.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<QuestRoomCatalog.QuestsLogosViewModel> QuestsLogosViewModels { get; set; }
     }
 }

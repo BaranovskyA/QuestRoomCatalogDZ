@@ -10,8 +10,8 @@ namespace QuestRoomCatalog
 
         public int QuestRoomId { get; set; }
 
-        [Required]
-        public byte[] Image { get; set; }
+        //[Required]
+        //public byte[] Image { get; set; }
 
         public bool IsLogo { get; set; }
 

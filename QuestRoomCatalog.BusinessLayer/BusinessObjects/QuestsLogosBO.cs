@@ -9,7 +9,7 @@ namespace QuestRoomCatalog.BusinessLayer.BusinessObjects
 
         public int QuestRoomId { get; set; }
 
-        public byte[] Image { get; set; }
+        //public byte[] Image { get; set; }
 
         public bool IsLogo { get; set; }
 

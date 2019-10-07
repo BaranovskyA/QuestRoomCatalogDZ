@@ -1,4 +1,7 @@
-﻿using System;
+﻿using QuestRoomCatalog.BusinessLayer;
+using QuestRoomCatalog.BusinessLayer.BusinessObjects;
+using QuestRoomCatalog.BusinessLayer.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +11,12 @@ namespace QuestRoomCatalog.Controllers
 {
     public class QuestLogosController : Controller
     {
+        ICrud<QuestsLogosBO> questLogosBO;
+
+        public QuestLogosController(ICrud<QuestsLogosBO> questLogosBO)
+        {
+            this.questLogosBO = questLogosBO;
+        }
         // GET: QuestLogos
         public ActionResult Index()
         {
@@ -28,11 +37,14 @@ namespace QuestRoomCatalog.Controllers
 
         // POST: QuestLogos/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(QuestsLogosViewModel collection)
         {
             try
             {
-                // TODO: Add insert logic here
+                //преобразуем view model в бизнес объект
+                var bo = AutoMapper<QuestsLogosViewModel, QuestsLogosBO>.Map(collection);
+                //и вызываем метод на бизнес слое, который вызовет метод на дата слое
+                questLogosBO.Create(bo);
 
                 return RedirectToAction("Index");
             }

@@ -152,6 +152,7 @@ namespace QuestRoomCatalog.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                //Добавить логику, проверку, что существует база или нет.
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
