@@ -226,7 +226,11 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\QuestRoomsViewModel.cs" />
     <Compile Include="Models\QuestsLogosViewModel.cs" />
+    <Compile Include="Models\RatingViewModel.cs" />
+    <Compile Include="Models\RolesViewModel.cs" />
+    <Compile Include="Models\UsersViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -310,6 +314,10 @@
     <ProjectReference Include="..\QuestRoomCatalog.BusinessLayer\QuestRoomCatalog.BusinessLayer.csproj">
       <Project>{85caf0cd-8b4b-4a49-8435-23ff59a6ff48}</Project>
       <Name>QuestRoomCatalog.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuestRoomCatalog.DataLayer\QuestRoomCatalog.DataLayer.csproj">
+      <Project>{ADDB917E-86A0-4889-A3F8-EF08D6B18F09}</Project>
+      <Name>QuestRoomCatalog.DataLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

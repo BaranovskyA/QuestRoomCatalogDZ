@@ -12,6 +12,10 @@ namespace QuestRoomCatalog.DataLayer.UnitOfWork
         private Model1 db;
         private bool disposed = false;
         Repository<QuestsLogos> _questsLogosUowRepository;
+        Repository<QuestsRooms> _questRoomsUowRepository;
+        Repository<Rating> _ratingUowRepository;
+        Repository<Roles> _rolesUowRepository;
+        Repository<Users> _usersUowRepository;
         //Repository<T> _genericRepository;
 
         public UnitOfWork()
@@ -34,7 +38,9 @@ namespace QuestRoomCatalog.DataLayer.UnitOfWork
         {
             get
             {
-                throw new NotImplementedException();
+                if (this._rolesUowRepository == null)
+                    _rolesUowRepository = new Repository<Roles>(db);
+                return _rolesUowRepository;
             }
         }
 
@@ -42,7 +48,9 @@ namespace QuestRoomCatalog.DataLayer.UnitOfWork
         {
             get
             {
-                throw new NotImplementedException();
+                if (this._ratingUowRepository == null)
+                    _ratingUowRepository = new Repository<Rating>(db);
+                return _ratingUowRepository;
             }
         }
 
@@ -50,7 +58,9 @@ namespace QuestRoomCatalog.DataLayer.UnitOfWork
         {
             get
             {
-                throw new NotImplementedException();
+                if (this._usersUowRepository == null)
+                    _usersUowRepository = new Repository<Users>(db);
+                return _usersUowRepository;
             }
         }
 
@@ -58,7 +68,9 @@ namespace QuestRoomCatalog.DataLayer.UnitOfWork
         {
             get
             {
-                throw new NotImplementedException();
+                if (this._questRoomsUowRepository == null)
+                    _questRoomsUowRepository = new Repository<QuestsRooms>(db);
+                return _questRoomsUowRepository;
             }
         }
 
